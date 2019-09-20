@@ -20,6 +20,7 @@ function mathOperation(a, b, operator){
     }
 
     console.log(result);
+    
 }
 
 mathOperation(2, 3, '**');

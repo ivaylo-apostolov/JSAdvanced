@@ -1,7 +1,11 @@
-function numbers(a, b, c){
-    console.log((a + b + c).length);
-    console.log(Math.floor(((a + b + c).length)/3));
+function numbers(){
+    let arr = 'string';
+    let splitString = arr.split("");
+
+    splitString.forEach(element => {
+        console.log(element);
+    });
 }
 
-numbers('chocolate', 'ice cream', 'cake');
+numbers();
     

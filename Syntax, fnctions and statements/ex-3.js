@@ -1,27 +1,34 @@
 function sameNumbers(a){
     var str = a.toString();
+    let splitStr = str.split("");
     var result = true;
+    var varToAllFiles = 0;
     
-    for (let i = 0; i < str.length -1; i++) {
-        if (str[i] != str[i + 1]) {
-            result = false;
-            break;
-        }
-    }
-    // var temp = str[0];
-
-    // str.every((element) => {
-    //     if (temp != element) {
-    //         return result = false;
+    // for (let i = 0; i < str.length -1; i++) {
+    //     if (str[i] != str[i + 1]) {
+    //         result = false;
+    //         break;
     //     }
-    //     return temp
-    // });
+    // }
+
+    var temp = splitStr[0];
+
+    splitStr.forEach(element => {
+        if (temp != element) {
+            return result = false;
+        }
+        return temp = element;
+    });
 
     console.log(result);
 
-    sum = str.map(e => Number(e));
-    sum = sum.reduce((a, b) => Number(a) + Number(b), 0);
+    let sum = 0;
+    splitStr.forEach(function(element) {
+        let num = Number(element);
+        sum += num;
+    });
+
     console.log(sum);
 }
 
-sameNumbers(22222221);
+sameNumbers(2222222);
