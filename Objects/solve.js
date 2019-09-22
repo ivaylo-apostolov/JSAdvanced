@@ -1,9 +1,7 @@
-function solve([...params]){
-    let arr = params.split(",");
-
-    for (const key in arr) {
+function solve(params){
+    for (const key in params) {
         console.log(key)
     }
 }
 
-solve(1,2,3,4);
+solve([1,2,3,4]);

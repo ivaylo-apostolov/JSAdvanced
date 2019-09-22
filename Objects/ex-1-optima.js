@@ -2,11 +2,7 @@ function solve(params) {
     let arr = [];
 
     for (const token of params) {
-        let obj = {
-            name: "",
-            level: "",
-            items: []
-        };
+        let obj = {};
         let tok = token.split(" / ");
 
         let lev = Number(tok[1]);
