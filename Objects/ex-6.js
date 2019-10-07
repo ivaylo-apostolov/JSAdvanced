@@ -15,6 +15,8 @@ function solve(input){
         components[systemName][componentName].push(subcomponentName);
     }
 
+    console.log(components);
+
     let sysArr = Object.keys(components).sort((a, b) => Object.keys(components[b]).length - Object.keys(components[a]).length || a.localeCompare(b));
 
     
