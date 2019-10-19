@@ -1,0 +1,10 @@
+1. Terminal
+npm init
+npm i mocha --save
+npm i chai -- save
+
+2. Debug
+Add configuration
+Add configuration -> mocha
+"tdd" -> "bdd"
+"${workspaceFolder}/test" -> "${file}"
