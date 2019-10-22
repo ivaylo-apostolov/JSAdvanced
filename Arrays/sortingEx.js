@@ -1,0 +1,1 @@
+console.log(["Ivan", "Ivo", "Ivaylo", "Iv"].sort((a, b)=> a.length - b.length))
