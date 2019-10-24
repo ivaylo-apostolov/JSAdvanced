@@ -57,22 +57,22 @@ class Organization {
         // marketing: this.marketing,
         //     finance: this.finance,
         //     production: this.production
+        let emp = this.employees;         
         let marketing = findEmployeesInDepartment('marketing');
         let finance = findEmployeesInDepartment('finance');
-        let production = findEmployeesInDepartment('production');
-
-        function findEmployeesInDepartment(nameOfDepartment){
-            return this.employees.reduce((acumulator, value) => {
-                if (value.department === 'nameOfDepartment') {
-                    acumulator.push(value);
+        let production = findEmployeesInDepartment('production');  
+        function findEmployeesInDepartment(nameOfDepartment) {
+            return emp.reduce((acumulator, value) => {
+                if (value.department === 'marketing') {
+                    acumulator.push(value.employeeName);
                 }
                 return acumulator;
             }, [])
             .sort((a, b) => b.salary - a.salary)
-            .reduce((acumulator, value) =>{
+            .reduce((acumulator, value) => {
                 acumulator.push(value.employeeName);
                 return acumulator;
-            },[]
+            }, []
             )
         }
 
@@ -82,6 +82,7 @@ class Organization {
 
         return `${this.name.toUpperCase()} DEPARTMENTS:\n}`
     }
+    
 }
 
 let org = new Organization("SS", 1000);

@@ -1,25 +1,25 @@
 class Person{
     _email;
     
-    constructor(firstName, lastName, age, email){
+    constructor(firstName, lastName, age, email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
     }
 
-    get email(){
+    get email() {
         return this._email;
     }
-    set email(value){
-        if(typeof value === undefined){
+    set email(value) {
+        if (typeof value === undefined) {
             this._email = '';
-        }else{
+        } else {
             this._email = value;
         }
     }
 
-    toString(){
+    toString() {
         return `${this.firstName} ${this.lastName} (age: ${this.age}, email: ${this.email})`;
     }
 }
