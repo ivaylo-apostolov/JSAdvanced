@@ -9,7 +9,34 @@ function mySolution() {
     
     send.addEventListener('click', function(){
         addToPending(divPendingQuestions);
+        question.value = '';
+        name.value = '';
     });   
+
+    divPendingQuestions.addEventListener('click', function(e) {
+        if (e.target.textContent === 'Archive') {
+            archiveContent(e.target);
+        } else if (e.target.textContent === 'Open') {
+            moveToOpen(e.target);
+        }
+    })
+
+    function moveToOpen(target) {
+        let openButton = target;
+        let div1 = openButton.parentNode;
+        let divToMove = div1.parentNode;
+        divToMove.lastChild.removeChild(divToMove.lastChild.lastChild);
+        divToMove.lastChild.firstElementChild.textContent = 'Reply';
+        divToMove.lastChild.firstElementChild.className = 'reply';
+        divOpenQuestions.appendChild(divToMove);
+    }
+
+    function archiveContent(target){
+        let archiveButton = target;
+        let div1 = archiveButton.parentNode;
+        let divToRemove = div1.parentNode;
+        divToRemove.parentNode.removeChild(divToRemove);
+    }
     
     function addToPending(parent) {        
         if (qustionText !== '') {
@@ -55,7 +82,7 @@ function mySolution() {
         let p = document.createElement('p');
         p.textContent = qustionText;
         parent.appendChild(p);
-    }
+    }    
 }
 
 // let textArea = document.querySelector("#inputSection > textarea");
